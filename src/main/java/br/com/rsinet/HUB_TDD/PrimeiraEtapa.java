@@ -49,7 +49,7 @@ public class PrimeiraEtapa {
 //		driver.findElement(By.name("cityRegisterPage")).sendKeys("Taboão da Serra");
 //		driver.findElement(By.name("addressRegisterPage")).sendKeys("Rua tal de tal");
 //		driver.findElement(By.name("state_/_province_/_regionRegisterPage")).sendKeys("São Paulo");
-//		driver.findElement(By.name("postal_codeRegisterPage")).sendKeys("00000000");
+//		driver.findElement(By.name("postal_codeRegisterPage")).sendKeys("11111111");
 //		driver.findElement(By.name("i_agree")).click();
 //		driver.findElement(By.id("register_btnundefined")).click();
 
