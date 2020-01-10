@@ -3,6 +3,7 @@ package br.com.rsinet.HUB_TDD.utility;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
+import org.apache.poi.ss.usermodel.Row.MissingCellPolicy;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -20,14 +21,14 @@ public class ExcelUtil {
 
 	private static XSSFRow Row;
 
-	public static void setExcelFile(String Path, String SheetName) throws Exception {
+	public static void setExcelFile(String Path, String Planilha1) throws Exception {
 
 		try {
 
 			FileInputStream ExcelFile = new FileInputStream(Path);
 			ExcelWBook = new XSSFWorkbook(ExcelFile);
 
-			ExcelWSheet = ExcelWBook.getSheet(SheetName);
+			ExcelWSheet = ExcelWBook.getSheet(Planilha1);
 
 		} catch (Exception e) {
 
@@ -61,7 +62,7 @@ public class ExcelUtil {
 
 			Row = ExcelWSheet.getRow(RowNum);
 
-//  Cell = Row.getCell(ColNum, Row.RETURN_BLANK_AS_NULL);
+			Cell = Row.getCell(ColNum, MissingCellPolicy.RETURN_BLANK_AS_NULL);
 
 			if (Cell == null) {
 

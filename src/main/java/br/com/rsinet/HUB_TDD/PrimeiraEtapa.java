@@ -17,7 +17,7 @@ public class PrimeiraEtapa {
 	@Test
 	public void main() throws InterruptedException {
 
-		WebDriver driver = new ChromeDriver();
+		driver = new ChromeDriver();
 		driver.get(Constante.URL);
 
 		Actions act = new Actions(driver);
