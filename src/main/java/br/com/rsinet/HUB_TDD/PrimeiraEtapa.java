@@ -3,12 +3,12 @@ package br.com.rsinet.HUB_TDD;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
 import br.com.rsinet.HUB_TDD.pageObject.Cadastro;
+import br.com.rsinet.HUB_TDD.pageObject.TelaDeLogin;
 
 public class PrimeiraEtapa {
 
@@ -22,35 +22,27 @@ public class PrimeiraEtapa {
 
 		Actions act = new Actions(driver);
 
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(13, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 
-		driver.findElement(By.id("menuUser")).click();
+		TelaDeLogin.Execute(driver);
 
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-		Thread.sleep(3000);
-		Cadastro.btt_cadastro(driver).click();
 		Cadastro.tx_Usuario(driver).sendKeys("MiguelBR");
+		Cadastro.tx_email(driver).sendKeys("migul@email.com");
 
-//		driver.findElement(By.xpath("//*[@id=\"formCover\"]/div[1]/div[1]/sec-view[1]/div/input")).sendKeys("MiguelBR");
-//
-//		driver.findElement(By.xpath("//*[@id=\"formCover\"]/div[1]/div[1]/sec-view[2]/div/input"))
-//				.sendKeys("migul@email.com");
-//		driver.findElement(By.name("passwordRegisterPage")).sendKeys("96Miguel.");
-//		driver.findElement(By.name("confirm_passwordRegisterPage")).sendKeys("96Miguel.");
-//		driver.findElement(By.name("first_nameRegisterPage")).sendKeys("Miguel");
-//		driver.findElement(By.name("last_nameRegisterPage")).sendKeys("Bruno");
-//		driver.findElement(By.name("phone_numberRegisterPage")).sendKeys("99999999999");
-//
-//		WebElement pais = driver.findElement(By.name("countryListboxRegisterPage"));
-//		new Select(pais).selectByVisibleText("Brazil");
-//
-//		driver.findElement(By.name("cityRegisterPage")).sendKeys("Taboão da Serra");
-//		driver.findElement(By.name("addressRegisterPage")).sendKeys("Rua tal de tal");
-//		driver.findElement(By.name("state_/_province_/_regionRegisterPage")).sendKeys("São Paulo");
-//		driver.findElement(By.name("postal_codeRegisterPage")).sendKeys("11111111");
-//		driver.findElement(By.name("i_agree")).click();
+		Cadastro.tx_senha(driver).sendKeys("96Miguel.");
+		Cadastro.tx_confirSenha(driver).sendKeys("96Miguel.");
+
+		Cadastro.tx_PrimeiroNome(driver).sendKeys("Miguel");
+		Cadastro.tx_UltimoNome(driver).sendKeys("Bruno");
+		Cadastro.tx_numeroTel(driver).sendKeys("99999999999");
+
+		Cadastro.cbx_Pais(driver);
+		Cadastro.tx_Cidade(driver).sendKeys("Taboão da Serra");
+		Cadastro.tx_Endereco(driver).sendKeys("Rua tal de tal");
+		Cadastro.tx_Estado(driver).sendKeys("São Paulo");
+		Cadastro.tx_CEP(driver).sendKeys("11111111");
+		Cadastro.chk_Aceite(driver).click();
 //		driver.findElement(By.id("register_btnundefined")).click();
 
 	}

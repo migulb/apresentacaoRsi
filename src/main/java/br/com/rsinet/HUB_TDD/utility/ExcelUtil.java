@@ -23,6 +23,7 @@ public class ExcelUtil {
 	public static void setExcelFile(String Path, String SheetName) throws Exception {
 
 		try {
+
 			FileInputStream ExcelFile = new FileInputStream(Path);
 			ExcelWBook = new XSSFWorkbook(ExcelFile);
 
@@ -33,6 +34,7 @@ public class ExcelUtil {
 			throw (e);
 
 		}
+
 	}
 
 	public static String getCellData(int RowNum, int ColNum) throws Exception {
@@ -59,7 +61,7 @@ public class ExcelUtil {
 
 			Row = ExcelWSheet.getRow(RowNum);
 
-//			Cell = Row.getCell(ColNum, Row.R)
+//  Cell = Row.getCell(ColNum, Row.RETURN_BLANK_AS_NULL);
 
 			if (Cell == null) {
 
@@ -87,5 +89,4 @@ public class ExcelUtil {
 		}
 
 	}
-
 }
