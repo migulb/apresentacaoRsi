@@ -1,15 +1,16 @@
-package br.com.rsinet.HUB_TDD.buscaprodutopag;
+package br.com.rsinet.HUB_TDD.buscaLupa;
 
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import br.com.rsinet.HUB_TDD.Constante;
-import br.com.rsinet.HUB_TDD.buscaprodutopag.pageObject.BuscaProduto;
 
-public class SegundaEtapa {
+public class TerceiraEtapa {
 
 	private WebDriver driver;
 
@@ -21,10 +22,9 @@ public class SegundaEtapa {
 		driver.manage().window().maximize();
 		driver.get(Constante.URL);
 
-		BuscaProduto.bt_mouse(driver).click();
-		BuscaProduto.bt_mouseWir(driver).click();
-		BuscaProduto.bt_addCar(driver).click();
-		BuscaProduto.bt_Cart(driver).click();
+		driver.findElement(By.id("menuSearch")).click();
+		driver.findElement(By.id("autoComplete")).sendKeys("Mouse", Keys.ENTER);
 
 	}
+
 }

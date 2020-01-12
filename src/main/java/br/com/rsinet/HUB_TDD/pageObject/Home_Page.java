@@ -13,7 +13,10 @@ public class Home_Page {
 
 	public static WebElement menuLogin(WebDriver driver) {
 
-		element = driver.findElement(By.id("menuUserSVGPath"));
+		element = driver.findElement(By.id("menuUser"));
+
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(element));
 
 		return element;
 	}
@@ -22,7 +25,7 @@ public class Home_Page {
 
 		element = driver.findElement(By.xpath("//a[@class='create-new-account ng-scope']"));
 
-		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebDriverWait wait = new WebDriverWait(driver, 15);
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 		JavascriptExecutor ex = (JavascriptExecutor) driver;
 

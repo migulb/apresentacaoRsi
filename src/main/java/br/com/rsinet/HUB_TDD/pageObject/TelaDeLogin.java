@@ -8,6 +8,7 @@ public class TelaDeLogin {
 
 		Home_Page.menuLogin(driver).click();
 
+		Thread.sleep(5000);
 		Home_Page.bt_Cadastro(driver).click();
 
 	}
