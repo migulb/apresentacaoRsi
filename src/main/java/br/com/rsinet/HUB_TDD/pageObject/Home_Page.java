@@ -1,7 +1,6 @@
 package br.com.rsinet.HUB_TDD.pageObject;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -24,12 +23,6 @@ public class Home_Page {
 	public static WebElement bt_Cadastro(WebDriver driver) {
 
 		element = driver.findElement(By.xpath("//a[@class='create-new-account ng-scope']"));
-
-		WebDriverWait wait = new WebDriverWait(driver, 15);
-		wait.until(ExpectedConditions.elementToBeClickable(element));
-		JavascriptExecutor ex = (JavascriptExecutor) driver;
-
-		ex.executeScript("arguments[0].click();", element);
 
 		return element;
 

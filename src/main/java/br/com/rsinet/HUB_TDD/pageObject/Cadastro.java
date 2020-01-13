@@ -106,4 +106,11 @@ public class Cadastro {
 
 		return element;
 	}
+
+	public static WebElement bt_ConfirmaCadastro(WebDriver driver) {
+
+		element = driver.findElement(By.id("register_btnundefined"));
+
+		return element;
+	}
 }

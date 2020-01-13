@@ -1,4 +1,4 @@
-package br.com.rsinet.HUB_TDD;
+package br.com.rsinet.HUB_TDD.testenegativo;
 
 import java.util.concurrent.TimeUnit;
 
@@ -6,10 +6,11 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import br.com.rsinet.HUB_TDD.Constante;
 import br.com.rsinet.HUB_TDD.pageObject.RealizaCadastro;
 import br.com.rsinet.HUB_TDD.utility.ExcelUtil;
 
-public class PrimeiraEtapa {
+public class PrimeiraEtapaNegativa {
 
 	private WebDriver driver;
 
@@ -26,5 +27,4 @@ public class PrimeiraEtapa {
 		RealizaCadastro.Cadastro(driver);
 
 	}
-
 }
