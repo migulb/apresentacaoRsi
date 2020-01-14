@@ -1,0 +1,5 @@
+2020-01-14 10:19:20,799 INFO  [Logger] Driver Instanciado 
+2020-01-14 10:19:22,819 INFO  [Logger] Link Acessado com Sucesso! 
+2020-01-14 10:19:22,834 INFO  [Logger] Implicit para aguardar todos os dados a cada ação do driver 
+2020-01-14 10:19:26,969 INFO  [Logger] Página Maximizada! 
+2020-01-14 10:19:30,030 INFO  [Logger] Cadastro Realizado com Sucesso ! 

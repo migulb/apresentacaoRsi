@@ -1,22 +1,25 @@
-package br.com.rsinet.HUB_TDD.buscaLupa;
+package br.com.rsinet.HUB_TDD.testenegativo.buscaLupa;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import br.com.rsinet.HUB_TDD.Constante;
 import br.com.rsinet.HUB_TDD.buscaLupa.pageObject.CaminhoBusca;
 import br.com.rsinet.HUB_TDD.utility.ExcelUtil;
 
-public class TerceiraEtapa {
+public class TerceiraEtapaNegativo {
 
 	private WebDriver driver;
 
 	@Test(priority = 0)
 	public void AbrirNavegador() {
+
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(13, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
@@ -29,14 +32,14 @@ public class TerceiraEtapa {
 		CaminhoBusca.bt_Procura(driver).click();
 		CaminhoBusca.txt_nomeBusca(driver).click();
 		driver.manage().timeouts().implicitlyWait(13, TimeUnit.SECONDS);
-		CaminhoBusca.txt_nomeBusca(driver).sendKeys(ExcelUtil.getCellData(1, 1) + Keys.ENTER);
-//		driver.findElement(By.xpath("//*[@id=\'output\']/div/div[2]/a[2]/img")).click();
+
+		CaminhoBusca.txt_nomeBusca(driver).sendKeys(ExcelUtil.getCellData(2, Constante.Col_buscaerro) + Keys.ENTER);
 	}
 
 	@Test(priority = 2)
-	public void FecharNavegador() {
+	public void UsoAssert() throws Exception {
 
-//		driver.quit();
-
+		String url = driver.findElement(By.xpath("//span[contains(text(),'No results for \"Mesa\"')]")).getText();
+		Assert.assertEquals(url, "No results for \"Mesa\"");
 	}
 }

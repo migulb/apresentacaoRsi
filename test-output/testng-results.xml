@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2020-01-14T15:49:50 BRT" name="Default suite" finished-at="2020-01-14T15:50:03 BRT" duration-ms="13357">
+    <groups>
+    </groups>
+    <test started-at="2020-01-14T15:49:50 BRT" name="Default test" finished-at="2020-01-14T15:50:03 BRT" duration-ms="13357">
+      <class name="br.com.rsinet.HUB_TDD.testenegativo.buscaLupa.TerceiraEtapaNegativo">
+        <test-method signature="AbrirNavegador()[pri:0, instance:br.com.rsinet.HUB_TDD.testenegativo.buscaLupa.TerceiraEtapaNegativo@fa36558]" started-at="2020-01-14T15:49:50 BRT" name="AbrirNavegador" finished-at="2020-01-14T15:50:00 BRT" duration-ms="10739" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AbrirNavegador -->
+        <test-method signature="ProcurarItem()[pri:1, instance:br.com.rsinet.HUB_TDD.testenegativo.buscaLupa.TerceiraEtapaNegativo@fa36558]" started-at="2020-01-14T15:50:00 BRT" name="ProcurarItem" finished-at="2020-01-14T15:50:02 BRT" duration-ms="1896" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ProcurarItem -->
+        <test-method signature="UsoAssert()[pri:2, instance:br.com.rsinet.HUB_TDD.testenegativo.buscaLupa.TerceiraEtapaNegativo@fa36558]" started-at="2020-01-14T15:50:02 BRT" name="UsoAssert" finished-at="2020-01-14T15:50:03 BRT" duration-ms="688" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UsoAssert -->
+      </class> <!-- br.com.rsinet.HUB_TDD.testenegativo.buscaLupa.TerceiraEtapaNegativo -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

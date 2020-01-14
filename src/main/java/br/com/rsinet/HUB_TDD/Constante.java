@@ -18,4 +18,6 @@ public class Constante {
 	public static final int Col_estado = 11;
 	public static final int COl_cep = 12;
 	public static final int Col_busca = 1;
+	public static final int Col_buscaerro = 1;
+	public static final int COl_Urlerro = 1;
 }
