@@ -1,6 +1,10 @@
 package br.com.rsinet.HUB_TDD.pageObject;
 
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 import br.com.rsinet.HUB_TDD.Constante;
 import br.com.rsinet.HUB_TDD.utility.ExcelUtil;
@@ -38,7 +42,13 @@ public class RealizaCadastro {
 
 		Cadastro.chk_Aceite(driver).click();
 
-//		Cadastro.bt_ConfirmaCadastro(driver).click();
+		Cadastro.bt_ConfirmaCadastro(driver).click();
+
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+		String user = driver.findElement(By.xpath("//span[@class='hi-user containMiniTitle ng-binding']")).getText();
+
+		Assert.assertTrue(user.contains(sUserName), "Usuário encontrado");
 
 	}
 

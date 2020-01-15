@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="br.com.rsinet.HUB_TDD.testenegativo.buscaLupa.TerceiraEtapaNegativo">
+      <class name="br.com.rsinet.HUB_TDD.PrimeiraEtapa">
         <methods>
-          <include name="ProcurarItem"/>
-          <include name="UsoAssert"/>
+          <include name="AbrirMenuCadastro"/>
+          <include name="finalizacao"/>
+          <include name="AbrirNavegador"/>
         </methods>
-      </class> <!-- br.com.rsinet.HUB_TDD.testenegativo.buscaLupa.TerceiraEtapaNegativo -->
+      </class> <!-- br.com.rsinet.HUB_TDD.PrimeiraEtapa -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
