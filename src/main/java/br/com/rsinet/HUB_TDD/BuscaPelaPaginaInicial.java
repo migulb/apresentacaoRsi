@@ -1,4 +1,4 @@
-package br.com.rsinet.HUB_TDD.testenegativo.Cadastro;
+package br.com.rsinet.HUB_TDD;
 
 import java.io.IOException;
 
@@ -15,20 +15,19 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import br.com.rsinet.HUB_TDD.Report.Utility;
+import br.com.rsinet.HUB_TDD.buscaprodutopag.pageObject.PesquisarProduto;
 import br.com.rsinet.HUB_TDD.utility.AbraChrome;
-import br.com.rsinet.HUB_TDD.utility.Constante;
-import br.com.rsinet.HUB_TDD.utility.ExcelUtil;
 
-public class PrimeiraEtapaNegativa {
+public class BuscaPelaPaginaInicial {
 
 	private WebDriver driver;
-
 	private static ExtentReports extent;
 	private static ExtentTest logger;
 
 	@BeforeMethod
-	public void AbrirNavegador() {
-		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Reports/CadastroNegativo.html");
+	public void AbriNavegador() {
+		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Reports/TestePesquisa.html");
+
 		extent = new ExtentReports();
 		extent.attachReporter(reporter);
 		logger = extent.createTest("TesteCadastro");
@@ -39,19 +38,15 @@ public class PrimeiraEtapaNegativa {
 	}
 
 	@Test()
-	public void RealizarCadastro() throws Exception {
+	public void EscolherPrduto() throws Exception {
 
-		ExcelUtil.setExcelFile(Constante.Path_TestData + Constante.File_TestData, "Planilha1");
-
-		RealizaCadastro.Cadastro(driver);
-
-		logger.log(Status.INFO, "Iniciando Cadastro");
-		logger.log(Status.PASS, "Cadastro não realizado");
-
+		PesquisarProduto.Execute(driver);
+		logger.log(Status.INFO, "Iniciando busca por Produto");
+		logger.log(Status.PASS, "Busca realizada com Sucesso");
 	}
 
 	@AfterMethod
-	public void FecharNavegador(ITestResult result) throws IOException {
+	public void fecharNavegador(ITestResult result) throws IOException {
 		if (result.getStatus() == ITestResult.FAILURE) {
 			String temp = Utility.getScreenshot(driver);
 			logger.fail("Erro ao realizar Cadastro", MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
@@ -60,6 +55,7 @@ public class PrimeiraEtapaNegativa {
 			String temp = Utility.getScreenshot(driver);
 			logger.pass("Cadastro com Sucesso !", MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
 		}
+
 		logger.log(Status.INFO, "Finalizando Teste");
 		logger.log(Status.PASS, "Encerrando Navegador");
 		extent.flush();

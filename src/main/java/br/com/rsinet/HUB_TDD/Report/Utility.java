@@ -22,6 +22,7 @@ public class Utility {
 
 		try {
 			FileUtils.copyFile(src, destination);
+
 		} catch (IOException e) {
 			System.out.println("Falha na Captura de Imagem " + e.getMessage());
 		}

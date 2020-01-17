@@ -6,14 +6,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-import br.com.rsinet.HUB_TDD.Constante;
+import br.com.rsinet.HUB_TDD.utility.Constante;
 import br.com.rsinet.HUB_TDD.utility.ExcelUtil;
 
 public class RealizaCadastro {
 
 	public static void Cadastro(WebDriver driver) throws Exception {
 
-//		TelaDeLogin.Execute(driver);
+		TelaDeLogin.Execute(driver);
 
 		String sUserName = ExcelUtil.getCellData(1, Constante.Col_UserName);
 		Cadastro.tx_Usuario(driver).sendKeys(sUserName);

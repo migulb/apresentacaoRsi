@@ -9,8 +9,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import br.com.rsinet.HUB_TDD.Constante;
-import br.com.rsinet.HUB_TDD.buscaLupa.pageObject.CaminhoBusca;
+import br.com.rsinet.HUB_TDD.buscaLupa.pageObject.CaminhoDeBuscaPelaLupa;
+import br.com.rsinet.HUB_TDD.utility.Constante;
 import br.com.rsinet.HUB_TDD.utility.ExcelUtil;
 
 public class TerceiraEtapaNegativo {
@@ -29,11 +29,12 @@ public class TerceiraEtapaNegativo {
 	@Test(priority = 1)
 	public void ProcurarItem() throws Exception {
 		ExcelUtil.setExcelFile(Constante.Path_TestData + Constante.File_TestData, "Planilha2");
-		CaminhoBusca.bt_Procura(driver).click();
-		CaminhoBusca.txt_nomeBusca(driver).click();
+		CaminhoDeBuscaPelaLupa.bt_Procura(driver).click();
+		CaminhoDeBuscaPelaLupa.txt_nomeBusca(driver).click();
 		driver.manage().timeouts().implicitlyWait(13, TimeUnit.SECONDS);
 
-		CaminhoBusca.txt_nomeBusca(driver).sendKeys(ExcelUtil.getCellData(2, Constante.Col_buscaerro) + Keys.ENTER);
+		CaminhoDeBuscaPelaLupa.txt_nomeBusca(driver).sendKeys(ExcelUtil.getCellData(2, Constante.Col_buscaerro) + Keys.ENTER);
+
 	}
 
 	@Test(priority = 2)

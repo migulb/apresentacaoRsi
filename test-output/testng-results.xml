@@ -2,31 +2,31 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-01-15T19:35:53 BRT" name="Default suite" finished-at="2020-01-15T19:36:19 BRT" duration-ms="25936">
+  <suite started-at="2020-01-16T16:15:01 BRT" name="Default suite" finished-at="2020-01-16T16:15:17 BRT" duration-ms="16460">
     <groups>
     </groups>
-    <test started-at="2020-01-15T19:35:53 BRT" name="Default test" finished-at="2020-01-15T19:36:19 BRT" duration-ms="25936">
-      <class name="br.com.rsinet.HUB_TDD.PrimeiraEtapa">
-        <test-method is-config="true" signature="AbrirNavegador()[pri:0, instance:br.com.rsinet.HUB_TDD.PrimeiraEtapa@1fb700ee]" started-at="2020-01-15T19:35:53 BRT" name="AbrirNavegador" finished-at="2020-01-15T19:36:04 BRT" duration-ms="11065" status="PASS">
+    <test started-at="2020-01-16T16:15:01 BRT" name="Default test" finished-at="2020-01-16T16:15:17 BRT" duration-ms="16460">
+      <class name="br.com.rsinet.HUB_TDD.testenegativo.Cadastro.PrimeiraEtapaNegativa">
+        <test-method is-config="true" signature="AbrirNavegador()[pri:0, instance:br.com.rsinet.HUB_TDD.testenegativo.Cadastro.PrimeiraEtapaNegativa@1356d4d4]" started-at="2020-01-16T16:15:01 BRT" name="AbrirNavegador" finished-at="2020-01-16T16:15:13 BRT" duration-ms="11614" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AbrirNavegador -->
-        <test-method signature="AbrirMenuCadastro()[pri:0, instance:br.com.rsinet.HUB_TDD.PrimeiraEtapa@1fb700ee]" started-at="2020-01-15T19:36:04 BRT" name="AbrirMenuCadastro" finished-at="2020-01-15T19:36:17 BRT" duration-ms="12837" status="PASS">
+        <test-method signature="RealizarCadastro()[pri:0, instance:br.com.rsinet.HUB_TDD.testenegativo.Cadastro.PrimeiraEtapaNegativa@1356d4d4]" started-at="2020-01-16T16:15:13 BRT" name="RealizarCadastro" finished-at="2020-01-16T16:15:16 BRT" duration-ms="3327" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AbrirMenuCadastro -->
-        <test-method is-config="true" signature="finalizacao(org.testng.ITestResult)[pri:0, instance:br.com.rsinet.HUB_TDD.PrimeiraEtapa@1fb700ee]" started-at="2020-01-15T19:36:17 BRT" name="finalizacao" finished-at="2020-01-15T19:36:19 BRT" duration-ms="2004" status="PASS">
+        </test-method> <!-- RealizarCadastro -->
+        <test-method is-config="true" signature="FecharNavegador(org.testng.ITestResult)[pri:0, instance:br.com.rsinet.HUB_TDD.testenegativo.Cadastro.PrimeiraEtapaNegativa@1356d4d4]" started-at="2020-01-16T16:15:16 BRT" name="FecharNavegador" finished-at="2020-01-16T16:15:17 BRT" duration-ms="1486" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=AbrirMenuCadastro status=SUCCESS method=PrimeiraEtapa.AbrirMenuCadastro()[pri:0, instance:br.com.rsinet.HUB_TDD.PrimeiraEtapa@1fb700ee] output={null}]]]>
+                <![CDATA[[TestResult name=RealizarCadastro status=SUCCESS method=PrimeiraEtapaNegativa.RealizarCadastro()[pri:0, instance:br.com.rsinet.HUB_TDD.testenegativo.Cadastro.PrimeiraEtapaNegativa@1356d4d4] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- finalizacao -->
-      </class> <!-- br.com.rsinet.HUB_TDD.PrimeiraEtapa -->
+        </test-method> <!-- FecharNavegador -->
+      </class> <!-- br.com.rsinet.HUB_TDD.testenegativo.Cadastro.PrimeiraEtapaNegativa -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

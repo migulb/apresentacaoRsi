@@ -5,17 +5,24 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import br.com.rsinet.HUB_TDD.Constante;
-
 public class AbraChrome {
 
-	public static WebDriver abrirChrome() {
+	private static WebDriver driver;
 
-		WebDriver driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(13, TimeUnit.SECONDS);
-		driver.manage().window().maximize();
-		driver.get(Constante.URL);
+	public static WebDriver inicializarDriver() {
+		if (driver == null) {
+			driver = new ChromeDriver();
+			driver.get(Constante.URL);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driver.manage().window().maximize();
+		}
 
 		return driver;
+	}
+
+	public static void fecharDriver() {
+		if (driver != null)
+			driver.quit();
+		driver = null;
 	}
 }

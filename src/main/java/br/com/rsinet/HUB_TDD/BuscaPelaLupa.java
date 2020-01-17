@@ -1,4 +1,4 @@
-package br.com.rsinet.HUB_TDD.testenegativo.Cadastro;
+package br.com.rsinet.HUB_TDD;
 
 import java.io.IOException;
 
@@ -15,20 +15,21 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import br.com.rsinet.HUB_TDD.Report.Utility;
+import br.com.rsinet.HUB_TDD.buscaLupa.pageObject.ProcurarProduto;
 import br.com.rsinet.HUB_TDD.utility.AbraChrome;
 import br.com.rsinet.HUB_TDD.utility.Constante;
 import br.com.rsinet.HUB_TDD.utility.ExcelUtil;
 
-public class PrimeiraEtapaNegativa {
+public class BuscaPelaLupa {
 
 	private WebDriver driver;
-
-	private static ExtentReports extent;
 	private static ExtentTest logger;
+	private static ExtentReports extent;
 
 	@BeforeMethod
 	public void AbrirNavegador() {
-		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Reports/CadastroNegativo.html");
+		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Reports/ProcuraProduto.html");
+
 		extent = new ExtentReports();
 		extent.attachReporter(reporter);
 		logger = extent.createTest("TesteCadastro");
@@ -36,18 +37,16 @@ public class PrimeiraEtapaNegativa {
 		driver = AbraChrome.inicializarDriver();
 		logger.log(Status.INFO, "Iniciando Navegador");
 		logger.log(Status.PASS, "Chrome Iniciado");
+
 	}
 
 	@Test()
-	public void RealizarCadastro() throws Exception {
+	public void ProcurarItem() throws Exception {
+		ExcelUtil.setExcelFile(Constante.Path_TestData + Constante.File_TestData, "Planilha2");
 
-		ExcelUtil.setExcelFile(Constante.Path_TestData + Constante.File_TestData, "Planilha1");
-
-		RealizaCadastro.Cadastro(driver);
-
-		logger.log(Status.INFO, "Iniciando Cadastro");
-		logger.log(Status.PASS, "Cadastro não realizado");
-
+		ProcurarProduto.Execute(driver);
+		logger.log(Status.INFO, "Iniciando a Procura");
+		logger.log(Status.PASS, "Procura realizada com Sucesso");
 	}
 
 	@AfterMethod
@@ -60,6 +59,7 @@ public class PrimeiraEtapaNegativa {
 			String temp = Utility.getScreenshot(driver);
 			logger.pass("Cadastro com Sucesso !", MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
 		}
+
 		logger.log(Status.INFO, "Finalizando Teste");
 		logger.log(Status.PASS, "Encerrando Navegador");
 		extent.flush();

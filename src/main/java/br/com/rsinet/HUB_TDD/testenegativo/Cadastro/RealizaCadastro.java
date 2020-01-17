@@ -1,10 +1,14 @@
 package br.com.rsinet.HUB_TDD.testenegativo.Cadastro;
 
-import org.openqa.selenium.WebDriver;
+import java.util.concurrent.TimeUnit;
 
-import br.com.rsinet.HUB_TDD.Constante;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
 import br.com.rsinet.HUB_TDD.pageObject.Cadastro;
 import br.com.rsinet.HUB_TDD.pageObject.TelaDeLogin;
+import br.com.rsinet.HUB_TDD.utility.Constante;
 import br.com.rsinet.HUB_TDD.utility.ExcelUtil;
 
 public class RealizaCadastro {
@@ -40,12 +44,16 @@ public class RealizaCadastro {
 
 		Cadastro.chk_Aceite(driver).click();
 
-//		Cadastro.bt_ConfirmaCadastro(driver).click();
+		Cadastro.bt_ConfirmaCadastro(driver).click();
 
+		// Thread.sleep(3000);
+		driver.manage().timeouts().implicitlyWait(13, TimeUnit.SECONDS);
 		String User = driver.getPageSource();
-		String falha = "Use 4 Character or longer";
+		String falha = "Use  4 character or longer";
 
-		// Assert.assertEquals("Erro ao Cadastrar", falha, User.contains(sUserName));
+		Assert.assertTrue(User.contains(falha));
 
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("scrollBy(0,-250)", "");
 	}
 }

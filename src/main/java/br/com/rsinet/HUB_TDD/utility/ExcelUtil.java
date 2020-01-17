@@ -8,8 +8,6 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import br.com.rsinet.HUB_TDD.Constante;
-
 public class ExcelUtil {
 
 	private static XSSFSheet ExcelWSheet;
