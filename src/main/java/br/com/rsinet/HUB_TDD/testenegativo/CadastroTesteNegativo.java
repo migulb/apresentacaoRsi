@@ -1,4 +1,4 @@
-package br.com.rsinet.HUB_TDD.testenegativo.Cadastro;
+package br.com.rsinet.HUB_TDD.testenegativo;
 
 import java.io.IOException;
 
@@ -15,11 +15,12 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import br.com.rsinet.HUB_TDD.Report.Utility;
-import br.com.rsinet.HUB_TDD.utility.AbraChrome;
+import br.com.rsinet.HUB_TDD.testenegativo.PageObject.RealizaCadastroNegativo;
+import br.com.rsinet.HUB_TDD.utility.AcoesDoNavegador;
 import br.com.rsinet.HUB_TDD.utility.Constante;
 import br.com.rsinet.HUB_TDD.utility.ExcelUtil;
 
-public class PrimeiraEtapaNegativa {
+public class CadastroTesteNegativo {
 
 	private WebDriver driver;
 
@@ -33,7 +34,7 @@ public class PrimeiraEtapaNegativa {
 		extent.attachReporter(reporter);
 		logger = extent.createTest("TesteCadastro");
 
-		driver = AbraChrome.inicializarDriver();
+		driver = AcoesDoNavegador.inicializarDriver();
 		logger.log(Status.INFO, "Iniciando Navegador");
 		logger.log(Status.PASS, "Chrome Iniciado");
 	}
@@ -43,7 +44,7 @@ public class PrimeiraEtapaNegativa {
 
 		ExcelUtil.setExcelFile(Constante.Path_TestData + Constante.File_TestData, "Planilha1");
 
-		RealizaCadastro.Cadastro(driver);
+		RealizaCadastroNegativo.Cadastro(driver);
 
 		logger.log(Status.INFO, "Iniciando Cadastro");
 		logger.log(Status.PASS, "Cadastro não realizado");

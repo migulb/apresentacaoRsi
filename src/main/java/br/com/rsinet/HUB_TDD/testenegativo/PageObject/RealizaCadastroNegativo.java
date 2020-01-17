@@ -1,4 +1,4 @@
-package br.com.rsinet.HUB_TDD.testenegativo.Cadastro;
+package br.com.rsinet.HUB_TDD.testenegativo.PageObject;
 
 import java.util.concurrent.TimeUnit;
 
@@ -11,7 +11,7 @@ import br.com.rsinet.HUB_TDD.pageObject.TelaDeLogin;
 import br.com.rsinet.HUB_TDD.utility.Constante;
 import br.com.rsinet.HUB_TDD.utility.ExcelUtil;
 
-public class RealizaCadastro {
+public class RealizaCadastroNegativo {
 
 	public static void Cadastro(WebDriver driver) throws Exception {
 
@@ -49,11 +49,11 @@ public class RealizaCadastro {
 		// Thread.sleep(3000);
 		driver.manage().timeouts().implicitlyWait(13, TimeUnit.SECONDS);
 		String User = driver.getPageSource();
-		String falha = "Use  4 character or longer";
+		String falha = "One upper letter required";
 
 		Assert.assertTrue(User.contains(falha));
 
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("scrollBy(0,-250)", "");
+		jse.executeScript("scrollBy(0,-400)", "");
 	}
 }

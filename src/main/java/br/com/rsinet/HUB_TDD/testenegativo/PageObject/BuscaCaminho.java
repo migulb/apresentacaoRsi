@@ -1,4 +1,4 @@
-package br.com.rsinet.HUB_TDD.testenegativo.buscaLupa;
+package br.com.rsinet.HUB_TDD.testenegativo.PageObject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

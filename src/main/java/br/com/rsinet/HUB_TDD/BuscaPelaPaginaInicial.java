@@ -16,7 +16,7 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import br.com.rsinet.HUB_TDD.Report.Utility;
 import br.com.rsinet.HUB_TDD.buscaprodutopag.pageObject.PesquisarProduto;
-import br.com.rsinet.HUB_TDD.utility.AbraChrome;
+import br.com.rsinet.HUB_TDD.utility.AcoesDoNavegador;
 
 public class BuscaPelaPaginaInicial {
 
@@ -32,13 +32,13 @@ public class BuscaPelaPaginaInicial {
 		extent.attachReporter(reporter);
 		logger = extent.createTest("TesteCadastro");
 
-		driver = AbraChrome.inicializarDriver();
+		driver = AcoesDoNavegador.inicializarDriver();
 		logger.log(Status.INFO, "Iniciando Navegador");
 		logger.log(Status.PASS, "Chrome Iniciado");
 	}
 
 	@Test()
-	public void EscolherPrduto() throws Exception {
+	public void EscolherProduto() throws Exception {
 
 		PesquisarProduto.Execute(driver);
 		logger.log(Status.INFO, "Iniciando busca por Produto");

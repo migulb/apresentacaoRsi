@@ -2,31 +2,31 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-01-16T16:15:01 BRT" name="Default suite" finished-at="2020-01-16T16:15:17 BRT" duration-ms="16460">
+  <suite started-at="2020-01-17T12:06:18 BRT" name="Default suite" finished-at="2020-01-17T12:06:30 BRT" duration-ms="12187">
     <groups>
     </groups>
-    <test started-at="2020-01-16T16:15:01 BRT" name="Default test" finished-at="2020-01-16T16:15:17 BRT" duration-ms="16460">
-      <class name="br.com.rsinet.HUB_TDD.testenegativo.Cadastro.PrimeiraEtapaNegativa">
-        <test-method is-config="true" signature="AbrirNavegador()[pri:0, instance:br.com.rsinet.HUB_TDD.testenegativo.Cadastro.PrimeiraEtapaNegativa@1356d4d4]" started-at="2020-01-16T16:15:01 BRT" name="AbrirNavegador" finished-at="2020-01-16T16:15:13 BRT" duration-ms="11614" status="PASS">
+    <test started-at="2020-01-17T12:06:18 BRT" name="Default test" finished-at="2020-01-17T12:06:30 BRT" duration-ms="12187">
+      <class name="br.com.rsinet.HUB_TDD.testenegativo.BuscaPelaPaginaInicialNegativo">
+        <test-method is-config="true" signature="InicioDoTeste()[pri:0, instance:br.com.rsinet.HUB_TDD.testenegativo.BuscaPelaPaginaInicialNegativo@1356d4d4]" started-at="2020-01-17T12:06:18 BRT" name="InicioDoTeste" finished-at="2020-01-17T12:06:28 BRT" duration-ms="10665" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AbrirNavegador -->
-        <test-method signature="RealizarCadastro()[pri:0, instance:br.com.rsinet.HUB_TDD.testenegativo.Cadastro.PrimeiraEtapaNegativa@1356d4d4]" started-at="2020-01-16T16:15:13 BRT" name="RealizarCadastro" finished-at="2020-01-16T16:15:16 BRT" duration-ms="3327" status="PASS">
+        </test-method> <!-- InicioDoTeste -->
+        <test-method signature="BuscadeProduto()[pri:0, instance:br.com.rsinet.HUB_TDD.testenegativo.BuscaPelaPaginaInicialNegativo@1356d4d4]" started-at="2020-01-17T12:06:28 BRT" name="BuscadeProduto" finished-at="2020-01-17T12:06:28 BRT" duration-ms="288" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- RealizarCadastro -->
-        <test-method is-config="true" signature="FecharNavegador(org.testng.ITestResult)[pri:0, instance:br.com.rsinet.HUB_TDD.testenegativo.Cadastro.PrimeiraEtapaNegativa@1356d4d4]" started-at="2020-01-16T16:15:16 BRT" name="FecharNavegador" finished-at="2020-01-16T16:15:17 BRT" duration-ms="1486" status="PASS">
+        </test-method> <!-- BuscadeProduto -->
+        <test-method is-config="true" signature="EncerraNavegador(org.testng.ITestResult)[pri:0, instance:br.com.rsinet.HUB_TDD.testenegativo.BuscaPelaPaginaInicialNegativo@1356d4d4]" started-at="2020-01-17T12:06:28 BRT" name="EncerraNavegador" finished-at="2020-01-17T12:06:30 BRT" duration-ms="1205" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=RealizarCadastro status=SUCCESS method=PrimeiraEtapaNegativa.RealizarCadastro()[pri:0, instance:br.com.rsinet.HUB_TDD.testenegativo.Cadastro.PrimeiraEtapaNegativa@1356d4d4] output={null}]]]>
+                <![CDATA[[TestResult name=BuscadeProduto status=SUCCESS method=BuscaPelaPaginaInicialNegativo.BuscadeProduto()[pri:0, instance:br.com.rsinet.HUB_TDD.testenegativo.BuscaPelaPaginaInicialNegativo@1356d4d4] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- FecharNavegador -->
-      </class> <!-- br.com.rsinet.HUB_TDD.testenegativo.Cadastro.PrimeiraEtapaNegativa -->
+        </test-method> <!-- EncerraNavegador -->
+      </class> <!-- br.com.rsinet.HUB_TDD.testenegativo.BuscaPelaPaginaInicialNegativo -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

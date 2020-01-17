@@ -16,7 +16,7 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import br.com.rsinet.HUB_TDD.Report.Utility;
 import br.com.rsinet.HUB_TDD.buscaLupa.pageObject.ProcurarProduto;
-import br.com.rsinet.HUB_TDD.utility.AbraChrome;
+import br.com.rsinet.HUB_TDD.utility.AcoesDoNavegador;
 import br.com.rsinet.HUB_TDD.utility.Constante;
 import br.com.rsinet.HUB_TDD.utility.ExcelUtil;
 
@@ -34,7 +34,7 @@ public class BuscaPelaLupa {
 		extent.attachReporter(reporter);
 		logger = extent.createTest("TesteCadastro");
 
-		driver = AbraChrome.inicializarDriver();
+		driver = AcoesDoNavegador.inicializarDriver();
 		logger.log(Status.INFO, "Iniciando Navegador");
 		logger.log(Status.PASS, "Chrome Iniciado");
 

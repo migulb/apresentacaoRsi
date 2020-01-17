@@ -15,6 +15,6 @@ public class PesquisarProduto {
 
 		String busca = driver.getPageSource();
 
-		Assert.assertTrue(busca.contains("HP Z3600 WIRELESS MOUSE"));
+		Assert.assertTrue(busca.contains("/catalog/fetchImage?image_id=5200"));
 	}
 }
