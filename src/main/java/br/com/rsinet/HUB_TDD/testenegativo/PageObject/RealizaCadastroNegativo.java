@@ -46,7 +46,6 @@ public class RealizaCadastroNegativo {
 
 		Cadastro.bt_ConfirmaCadastro(driver).click();
 
-		// Thread.sleep(3000);
 		driver.manage().timeouts().implicitlyWait(13, TimeUnit.SECONDS);
 		String User = driver.getPageSource();
 		String falha = "One upper letter required";
