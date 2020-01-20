@@ -16,9 +16,11 @@ public class ProcurarProduto {
 		driver.manage().timeouts().implicitlyWait(13, TimeUnit.SECONDS);
 		CaminhoDeBuscaPelaLupa.txt_nomeBusca(driver).sendKeys(ExcelUtil.getCellData(1, 1) + Keys.ENTER);
 		CaminhoDeBuscaPelaLupa.bt_Produto(driver).click();
+		CaminhoDeBuscaPelaLupa.bt_cart(driver).click();
+		CaminhoDeBuscaPelaLupa.bt_finalCart(driver).click();
 
-		String busca = driver.getCurrentUrl();
-		String url = "https://www.advantageonlineshopping.com/#/product/30?viewAll=HP%20Z4000%20WIRELESS%20MOUSE";
-		Assert.assertTrue(busca.contains(url));
+		String busca = driver.getPageSource();
+		String produto = "HP Z4000 WIRELESS MOUSE";
+		Assert.assertTrue(busca.contains(produto));
 	}
 }

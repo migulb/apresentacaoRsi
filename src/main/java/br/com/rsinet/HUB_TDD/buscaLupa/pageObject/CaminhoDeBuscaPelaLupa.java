@@ -30,4 +30,19 @@ public class CaminhoDeBuscaPelaLupa {
 		return element;
 	}
 
+	public static WebElement bt_cart(WebDriver driver) {
+
+		element = driver.findElement(By.name("save_to_cart"));
+
+		return element;
+
+	}
+
+	public static WebElement bt_finalCart(WebDriver driver) {
+
+		element = driver.findElement(By.xpath("//tool-tip-cart[@id='toolTipCart']//div//table//tfoot"));
+
+		return element;
+	}
+
 }
