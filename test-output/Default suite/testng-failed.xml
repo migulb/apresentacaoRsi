@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="br.com.rsinet.HUB_TDD.BuscaPelaLupa">
+      <class name="br.com.rsinet.HUB_TDD.testenegativo.BuscaPelaPaginaInicialNegativo">
         <methods>
-          <include name="FecharNavegador"/>
-          <include name="ProcurarItem"/>
-          <include name="AbrirNavegador"/>
+          <include name="BuscadeProduto"/>
+          <include name="EncerraNavegador"/>
+          <include name="InicioDoTeste"/>
         </methods>
-      </class> <!-- br.com.rsinet.HUB_TDD.BuscaPelaLupa -->
+      </class> <!-- br.com.rsinet.HUB_TDD.testenegativo.BuscaPelaPaginaInicialNegativo -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
