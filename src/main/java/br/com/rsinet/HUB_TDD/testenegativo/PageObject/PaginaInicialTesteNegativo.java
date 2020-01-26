@@ -18,4 +18,18 @@ public class PaginaInicialTesteNegativo {
 
 	}
 
+	public static WebElement text_noteInicial(WebDriver driver) {
+
+		element = driver.findElement(By.xpath("//p[@name='popular_item_10_name']"));
+
+		return element;
+	}
+
+	public static WebElement text_noteFinal(WebDriver driver) {
+
+		element = driver.findElement(By.xpath("//h1[@class='roboto-regular screen768 ng-binding']"));
+
+		return element;
+	}
+
 }

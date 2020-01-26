@@ -45,4 +45,11 @@ public class CaminhoDeBuscaPelaLupa {
 		return element;
 	}
 
+	public static WebElement txt_Busca(WebDriver driver) {
+
+		element = driver.findElement(By.xpath("//span[contains(text(),'No results for \\\"Mesa\\\"')]"));
+
+		return element;
+	}
+
 }
