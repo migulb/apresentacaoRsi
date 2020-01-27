@@ -24,7 +24,7 @@
 		<link>
 			<name>src/main/java/br/com/rsinet/HUB_TDD/DadosTeste/DadosTeste.xlsx</name>
 			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/Documents/DadosTeste.xlsx</locationURI>
+			<location>C:/Users/miguel.vale/Documents/DadosTeste.xlsx</location>
 		</link>
 	</linkedResources>
 </projectDescription>

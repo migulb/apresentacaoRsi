@@ -12,7 +12,9 @@ import org.testng.Assert;
 import br.com.rsinet.HUB_TDD.utility.Constante;
 import br.com.rsinet.HUB_TDD.utility.ExcelUtil;
 
+//Nessa classe eu retorno os elementos com sua devida localização//
 public class Cadastro {
+
 	private static WebElement element = null;
 
 	public static WebElement tx_Usuario(WebDriver driver) {
