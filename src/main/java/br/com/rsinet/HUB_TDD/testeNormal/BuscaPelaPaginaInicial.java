@@ -1,4 +1,4 @@
-package br.com.rsinet.HUB_TDD;
+package br.com.rsinet.HUB_TDD.testeNormal;
 
 import java.io.IOException;
 

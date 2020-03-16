@@ -5,6 +5,7 @@ public class Constante {
 	public static final String Path_TestData = "C:\\Users\\miguel.vale\\Documents\\";
 	public static final String File_TestData = "DadosTeste.xlsx";
 
+	public static final String SheetName = "Planilha1";
 	public static final int Col_CasoDeTeste = 0;
 	public static final int Col_UserName = 1;
 	public static final int Col_email = 2;
