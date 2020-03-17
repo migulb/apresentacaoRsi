@@ -106,5 +106,11 @@ public class DadosExcel {
 		return ExcelUtil.getCellData(2, Constante.COl_cep);
 	}
 
+	public String Busca_lupa() throws Exception {
+		return ExcelUtil.getCellData(4, Constante.Col_busca);
+	}
+	public String Busca_falha() throws Exception {
+		return ExcelUtil.getCellData(5, Constante.Col_buscaerro);
+	}
 }
 

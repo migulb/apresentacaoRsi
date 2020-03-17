@@ -3,16 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="br.com.rsinet.HUB_TDD.testeNormal.CadastrarUsuario">
+      <class name="br.com.rsinet.HUB_TDD.testeNormal.BuscaPelaLupa">
         <methods>
-          <include name="finalizaReport"/>
-          <include name="finalizacao"/>
-          <include name="Cadastro1"/>
-          <include name="Cadastro2"/>
-          <include name="AbrirNavegador"/>
+          <include name="ProcurarItem2"/>
           <include name="IniciaReport"/>
+          <include name="FecharNavegador"/>
+          <include name="AbrirNavegador"/>
         </methods>
-      </class> <!-- br.com.rsinet.HUB_TDD.testeNormal.CadastrarUsuario -->
+      </class> <!-- br.com.rsinet.HUB_TDD.testeNormal.BuscaPelaLupa -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -7,32 +7,54 @@ import org.openqa.selenium.WebElement;
 public class BuscaProduto {
 
 	private static WebElement element = null;
+	private static WebDriver driver;
+	
+	public BuscaProduto(WebDriver driver) {
+		this.driver = driver;
+	}
+	private static WebElement bt_categoria(WebDriver driver) {
 
-	public static WebElement bt_mouse(WebDriver driver) {
-
-		element = driver.findElement(By.id("miceImg"));
-
-		return element;
+		return driver.findElement(By.id("miceImg"));
 	}
 
-	public static WebElement bt_mouseWir(WebDriver driver) {
+	private static WebElement bt_mouseWir(WebDriver driver) {
 
-		element = driver.findElement(By.id("27"));
-
-		return element;
+		return driver.findElement(By.id("27"));
 	}
 
-	public static WebElement bt_addCar(WebDriver driver) {
-
-		element = driver.findElement(By.name("save_to_cart"));
-
-		return element;
+	private static WebElement bt_addCar(WebDriver driver) {
+		
+		return driver.findElement(By.name("save_to_cart"));
 	}
 
-	public static WebElement bt_Cart(WebDriver driver) {
+	private static WebElement bt_Cart(WebDriver driver) {
 
-		element = driver.findElement(By.xpath("//header//tfoot//td[2]"));
+		return  driver.findElement(By.xpath("//header//tfoot//td[2]"));
+	}
+	
+	private static WebElement btn_Notebook(WebDriver driver) {
+		
+		return driver.findElement(By.id("details_10"));
+	}
 
-		return element;
+	
+	public void click_categoria() {
+		bt_categoria(driver).click();
+	}
+	
+	public void click_MouseEspecifico() {
+		bt_mouseWir(driver).click();
+	}
+	
+	public void adiciona_carrinho() {
+		bt_addCar(driver).click();
+	}
+	
+	public void carrinho() {
+		bt_Cart(driver).click();
+	}
+	
+	public void clicka_Notebook() {
+		btn_Notebook(driver).click();
 	}
 }
