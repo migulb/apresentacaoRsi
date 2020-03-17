@@ -10,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -25,9 +26,12 @@ import br.com.rsinet.HUB_TDD.utility.DadosExcel;
 
 public class CadastrarUsuario {
 
-	WebElement element;
-	WebDriver driver;
-
+	private static WebElement element;
+	private static WebDriver driver;
+	private static DadosExcel dados;
+	private static Home_Page home;
+	private static Cadastro cadastro;
+	
 	private static ExtentReports extent;
 	private static ExtentTest logger;
 
@@ -38,21 +42,18 @@ public class CadastrarUsuario {
 	}
 
 	@BeforeMethod
-	public void AbrirNavegador() throws InterruptedException {
-
-		// Função que inicializa as funções de Report
-		logger = Reports.createTest("TesteCadastroUsuario");
-
+	public void AbrirNavegador() throws Exception {
 		// Inicializa o navegador
 		driver = AcoesDoNavegador.inicializarDriver();
+		dados = new DadosExcel(driver);
+		home = new Home_Page(driver);
+		cadastro = new Cadastro(driver);
 	}
 
-	@Test()
-	public void AbrirMenuCadastro() throws Exception {
+	@Test
+	public void Cadastro1() throws Exception {
+		logger = Reports.createTest("TesteCadastroUsuario");
 		// Realiza o cadastro
-		DadosExcel dados = new DadosExcel(driver);
-		Home_Page home = new Home_Page(driver);
-		Cadastro cadastro = new Cadastro(driver);
 
 		home.clickar_login();
 		home.clickar_Cadastro();
@@ -63,8 +64,6 @@ public class CadastrarUsuario {
 		cadastro.digitar_Nome(dados.PrimeiroNome());
 		cadastro.digitar_UltimoNome(dados.UltimoNome());
 		cadastro.digitar_Telefone(dados.Telefone());
-		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("scrollBy(0,320)", "");
 		cadastro.escolher_Pais();
 		cadastro.digitar_Cidade(dados.Cidade());
 		cadastro.digitar_Endereco(dados.Endereco());
@@ -78,12 +77,48 @@ public class CadastrarUsuario {
 
 		Assert.assertTrue(user.contains(dados.usuario()), "Usuário encontrado");
 	}
+	
+	@Test
+	public void Cadastro2() throws Exception {
+		logger = Reports.createTest("TesteCadastroUsuarioNegativo");
+		
+		home.clickar_login();
+		home.clickar_Cadastro();
+		cadastro.digitar_usuario(dados.usuario_falha());
+		cadastro.digitar_email(dados.email_falha());
+		cadastro.digitar_senha(dados.senha_falha());
+		cadastro.confirmar_senha(dados.ConfirmaSenha_falha());
+		cadastro.digitar_Nome(dados.PrimeiroNome_falha());
+		cadastro.digitar_UltimoNome(dados.UltimoNome_falha());
+		cadastro.digitar_Telefone(dados.Telefone_falha());
+		cadastro.escolher_Pais();
+		cadastro.digitar_Cidade(dados.Cidade_falha());
+		cadastro.digitar_Endereco(dados.Endereco_falha());
+		cadastro.digitar_Estado(dados.Estado_falha());
+		cadastro.digitar_CEP(dados.CEP_falha());
+		cadastro.confirmaTermos();
+		cadastro.confirmarCadastro();
+		
+		driver.manage().timeouts().implicitlyWait(13, TimeUnit.SECONDS);
+		String User = driver.getPageSource();
+		String falha = "One upper letter required";
+
+		Assert.assertTrue(User.contains(falha));
+
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("scrollBy(0,-400)", "");
+	}
 
 	@AfterMethod
 	public void finalizacao(ITestResult result) throws IOException {
-
 		Reports.statusReported(logger, result, driver);
-		Reports.quitExtent(extent);
-		driver.quit();
+		AcoesDoNavegador.fecharDriver();
 	}
+	
+	@AfterTest
+	public void finalizaReport() {
+		Reports.quitExtent(extent);
+
+	}
+	
 }

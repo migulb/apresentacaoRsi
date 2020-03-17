@@ -120,8 +120,9 @@ public class Cadastro {
 		tx_numeroTel(driver).sendKeys(telefone);
 	}
 	
-	public void escolher_Pais() {
+	public void escolher_Pais() throws InterruptedException {
 		cbx_Pais(driver).click();
+		Thread.sleep(2000);
 		new Select(cbx_Pais(driver)).selectByVisibleText("Brazil");
 	}
 	
